@@ -1,7 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
-import heroImg from './assets/hero.png'
 import { NavBar } from './components/NavBar.jsx'
+
+const profileImage = '/IMG_6288.jpeg'
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
             </div>
 
             <div className="hero-visual">
-              <img src="C:\Users\User\Downloads\IMG_6285.jpeg" alt="Profile" />
+              <img src={profileImage} alt="Profile" />
             </div>
           </div>
         </section>
