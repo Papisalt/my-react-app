@@ -19,13 +19,13 @@ function App() {
           <div className="hero-image">
             <img src="C:\Users\User\Downloads\˖⁺‧₊˚♡˚₊‧⁺˖.jfif" alt="Hero Image" />
           </div>
-          
+
           <div className="cta-row">
             <button className="btn btn-primary btn-lg">Get started</button>
             <button className="btn btn-outline-light btn-lg">View work</button>
           </div>
 
-
+{/* gsggsgs */}
         </section>
 
         <div className="row g-4 mt-1">
