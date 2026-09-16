@@ -3,8 +3,8 @@ export const NavBar = () => {
     <nav className="navbar navbar-expand-lg custom-navbar">
       <div className="container">
         <a className="navbar-brand brand-mark" href="#">
-          <span className="brand-badge">A</span>
-          Aster
+          <span className="brand-badge">Jv</span>
+          John Errol Valdez
         </a>
 
         <button
