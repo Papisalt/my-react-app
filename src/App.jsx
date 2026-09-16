@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
+import heroImg from './assets/hero.png'
 import { NavBar } from './components/NavBar.jsx'
 
 function App() {
@@ -9,23 +10,25 @@ function App() {
 
       <main className="container py-5">
         <section className="hero-panel">
-          <span className="eyebrow">Welcome</span>
-          <h1>Build something people remember.</h1>
-          <p>
-            We turn ideas into polished digital experiences with clean design,
-            flexible systems, and thoughtful details.
-          </p>
+          <div className="hero-layout">
+            <div className="hero-copy">
+              <span className="eyebrow">Welcome</span>
+              <h1>Build something people remember.</h1>
+              <p>
+                We turn ideas into polished digital experiences with clean design,
+                flexible systems, and thoughtful details.
+              </p>
 
-          <div className="hero-image">
-            <img src="C:\Users\User\Downloads\˖⁺‧₊˚♡˚₊‧⁺˖.jfif" alt="Hero Image" />
+              <div className="cta-row">
+                <button className="btn btn-primary btn-lg">Get started</button>
+                <button className="btn btn-outline-light btn-lg">View work</button>
+              </div>
+            </div>
+
+            <div className="hero-visual">
+              <img src={heroImg} alt="Creative team showcasing product design" />
+            </div>
           </div>
-
-          <div className="cta-row">
-            <button className="btn btn-primary btn-lg">Get started</button>
-            <button className="btn btn-outline-light btn-lg">View work</button>
-          </div>
-
-{/* gsggsgs */}
         </section>
 
         <div className="row g-4 mt-1">
