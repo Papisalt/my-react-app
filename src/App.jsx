@@ -26,7 +26,7 @@ function App() {
             </div>
 
             <div className="hero-visual">
-              <img src={heroImg} alt="Creative team showcasing product design" />
+              <img src="C:\Users\User\Downloads\IMG_6285.jpeg" alt="Profile" />
             </div>
           </div>
         </section>
