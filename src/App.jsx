@@ -1,59 +1,43 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
+import './pages.css'
 import { NavBar } from './components/NavBar.jsx'
-
-const profileImage = '/IMG_6288.jpeg'
+import { ScrollToTop } from './components/ScrollToTop.jsx' 
+import { SiteFooter } from './components/SiteFooter.jsx'
+import { About } from './pages/About.jsx'
+import { Contact } from './pages/Contact.jsx'
+import { Home } from './pages/Home.jsx'
+import { NotFound } from './pages/NotFound.jsx'
+import { Projects } from './pages/Projects.jsx'
+import { Skills } from './pages/Skills.jsx'
 
 function App() {
   return (
-    <div className="app-shell">
-      <NavBar />
+    <BrowserRouter>
+      <ScrollToTop />
 
-      <main className="container py-5">
-        <section className="hero-panel">
-          <div className="hero-layout">
-            <div className="hero-copy">
-              <span className="eyebrow">Welcome</span>
-              <h1>Build something people remember.</h1>
-              <p>
-                We turn ideas into polished digital experiences with clean design,
-                flexible systems, and thoughtful details.
-              </p>
+      <div className="app-shell">
+        <a className="skip-link" href="#main-content">
+          Skip to main content
+        </a>
 
-              <div className="cta-row">
-                <button className="btn btn-primary btn-lg">Get started</button>
-                <button className="btn btn-outline-light btn-lg">View work</button>
-              </div>
-            </div>
+        <NavBar />
 
-            <div className="hero-visual">
-              <img src={profileImage} alt="Profile" />
-            </div>
-          </div>
-        </section>
+        <main className="container py-5" id="main-content" tabIndex={-1}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
 
-        <div className="row g-4 mt-1">
-          <div className="col-md-4">
-            <div className="info-card">
-              <h3>Strategy</h3>
-              <p>Clarify your goals and define a path that feels clear, focused, and measurable.</p>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="info-card">
-              <h3>Design</h3>
-              <p>Build interfaces that feel premium, readable, and easy to navigate on every screen.</p>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="info-card">
-              <h3>Delivery</h3>
-              <p>Ship fast with modern tools and components that are ready for real users.</p>
-            </div>
-          </div>
-        </div>
-      </main>
-    </div>
+        <SiteFooter />
+      </div>
+    </BrowserRouter>
   )
 }
 

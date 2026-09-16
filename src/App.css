@@ -56,7 +56,8 @@
   padding-inline: 1.1rem;
 }
 
-.hero-panel {
+.hero-panel,
+.page-panel {
   background: rgba(15, 23, 42, 0.72);
   border: 1px solid rgba(148, 163, 184, 0.15);
   border-radius: 1.5rem;
@@ -112,11 +113,12 @@
 
 .hero-visual img {
   width: 100%;
-  max-width: 420px;
-  aspect-ratio: 1;
+  max-width: 360px;
+  aspect-ratio: 4 / 5;
   height: auto;
-  border-radius: 50%;
+  border-radius: 1.25rem;
   object-fit: cover;
+  object-position: top center;
   box-shadow: 0 20px 35px rgba(15, 23, 42, 0.45);
   border: 1px solid rgba(148, 163, 184, 0.2);
 }
@@ -154,7 +156,8 @@
 }
 
 @media (max-width: 991.98px) {
-  .hero-panel {
+  .hero-panel,
+  .page-panel {
     padding: 2.5rem 1.5rem;
   }
 
@@ -167,6 +170,14 @@
     margin: 0 auto;
   }
 
+  .hero-visual {
+    margin-top: 0.5rem;
+  }
+
+  .hero-visual img {
+    max-width: 320px;
+  }
+
   .cta-row {
     justify-content: center;
   }
@@ -174,4 +185,41 @@
   .custom-navbar .navbar-collapse {
     padding-top: 1rem;
   }
+}
+
+/* ---------------------------------------------------------------
+   Accessibility helpers shared by every route
+   --------------------------------------------------------------- */
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -5rem;
+  z-index: 20;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  background: #f8fafc;
+  color: #0b1020;
+  font-weight: 700;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #a5b4fc;
+  outline-offset: 3px;
+}
+
+/* Focus is moved here programmatically after each navigation. */
+#main-content:focus {
+  outline: none;
 }
