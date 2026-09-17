@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import { PageHeader } from '../components/PageHeader.jsx'
-import { useDocumentTitle } from '../hooks/useDocumentTitle.js'
 
 // Replace this placeholder with your real address before publishing.
 const contactEmail = 'john.valdez@example.com'
@@ -56,8 +55,6 @@ const validate = (values) => {
 }
 
 export const Contact = () => {
-  useDocumentTitle('Contact')
-
   const [values, setValues] = useState(initialValues)
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle')
@@ -107,6 +104,7 @@ export const Contact = () => {
     <>
       <PageHeader
         eyebrow="Contact"
+        headingId="contact-heading"
         title="Let us talk about your project"
         lead="Send a message with the form below, or reach me directly through the details alongside it."
       />

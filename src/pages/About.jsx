@@ -1,13 +1,11 @@
-import { NavLink } from 'react-router-dom'
 import { PageHeader } from '../components/PageHeader.jsx'
-import { useDocumentTitle } from '../hooks/useDocumentTitle.js'
 
 const aboutImage = '/IMG_6288.jpeg'
 
 const journey = [
   {
-    year: '2021',
-    title: 'First design work',
+    year: '2020',
+    title: 'First',
     description:
       'Started with logo and poster layouts for school projects, learning spacing, hierarchy, and colour.',
   },
@@ -39,12 +37,11 @@ const practices = [
 ]
 
 export const About = () => {
-  useDocumentTitle('About')
-
   return (
     <>
       <PageHeader
         eyebrow="About"
+        headingId="about-heading"
         title="About John Errol Valdez"
         lead="Designer turned developer, building interfaces that are simple to use and simple to maintain."
       />
@@ -76,7 +73,7 @@ export const About = () => {
               src={aboutImage}
               alt="Graduation portrait of John Errol Valdez wearing a navy gown with a red hood"
             />
-            <figcaption>Graduation portrait, 2025.</figcaption>
+            <figcaption>Graduation portrait, 2026.</figcaption>
           </figure>
         </div>
       </section>
@@ -118,12 +115,12 @@ export const About = () => {
           Tell me what you are working on and I will let you know how I can help.
         </p>
         <div className="cta-row">
-          <NavLink className="btn btn-primary btn-lg" to="/contact">
+          <a className="btn btn-primary btn-lg" href="#contact">
             Contact me
-          </NavLink>
-          <NavLink className="btn btn-outline-light btn-lg" to="/skills">
+          </a>
+          <a className="btn btn-outline-light btn-lg" href="#skills">
             Review my skills
-          </NavLink>
+          </a>
         </div>
       </section>
     </>

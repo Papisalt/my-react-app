@@ -1,6 +1,5 @@
-import { NavLink } from 'react-router-dom'
 import { PageHeader } from '../components/PageHeader.jsx'
-import { useDocumentTitle } from '../hooks/useDocumentTitle.js'
+import { ThumbPlaceholder } from '../components/ThumbPlaceholder.jsx'
 
 // =============================================================================
 //  ADD YOUR PROJECTS HERE
@@ -12,77 +11,102 @@ import { useDocumentTitle } from '../hooks/useDocumentTitle.js'
 //    status      Short label, e.g. 'Live', 'In progress', 'Case study'
 //    description One or two sentences about what it is and what you did
 //    liveUrl     Your deployed website    -> 'https://my-project.vercel.app'
+//    videoUrl    Demo video or walkthrough -> 'https://youtu.be/your-video'
+//    videoLabel  Button text for the video  -> 'Watch on YouTube'
 //    sourceUrl   Your repository          -> 'https://github.com/Papisalt/my-project'
 //    image       Screenshot in public/projects/ -> '/projects/my-project.png'
 //    imageAlt    What the screenshot shows (used by screen readers)
 //    highlights  Optional bullet list of the work you did
-//    tags        The tools and skills you used
+//    tags        Optional tools and skills you used
 // =============================================================================
 const projects = [
   {
-    title: 'Gradfolio',
+    title: 'DILG CAR RSPP',
     status: 'Live',
-    description:
-      'This portfolio site: a routed React app with a dark, high-contrast theme, accessible navigation, and a page for every section.',
-    // Paste your deployed address here when the site is online, e.g.
-    // liveUrl: 'https://your-portfolio.vercel.app',
-    liveUrl: '',
-    sourceUrl: 'https://github.com/Papisalt/my-react-app',
+    description: 'The RSPP website for DILG Cordillera, shown here on its test address.',
+    liveUrl: 'https://test-rspp.car.dilg.gov.ph/',
+    // sourceUrl: 'https://github.com/Papisalt/dilg-rspp',
+    sourceUrl: '',
     // Save a screenshot in public/projects/ then point to it here:
-    // image: '/projects/gradfolio.png',
+    // image: '/projects/dilg-rspp.png',
     image: '',
     imageAlt: '',
-    highlights: [
-      'Built five routed pages with React Router sharing one accessible navigation bar.',
-      'Added a skip link, route-change focus handling, and fully labelled form fields.',
-    ],
-    tags: ['React', 'Vite', 'Bootstrap', 'React Router'],
+    // Say what you did on this project, for example:
+    // highlights: [
+    //   'Built the responsive layout for the main pages.',
+    //   'Checked every section on mobile and desktop browsers.',
+    // ],
+    // Add the tools you used, for example:
+    // tags: ['HTML', 'CSS', 'JavaScript', 'WordPress'],
+    tags: [],
   },
   {
-    title: 'Your next project',
-    status: 'In progress',
+    title: 'Fallen music video',
+    status: 'Video',
     description:
-      'Describe the project in a sentence or two: what it does, who it is for, and what part you built.',
-    // liveUrl: 'https://project-name.netlify.app',
+      'A self-made, unofficial music video for Fallen by Lola Amour, published on my YouTube channel.',
     liveUrl: '',
-    // sourceUrl: 'https://github.com/Papisalt/project-name',
+    videoUrl: 'https://youtu.be/6BrG8jik-IA',
+    videoLabel: 'Watch on YouTube',
     sourceUrl: '',
-    // image: '/projects/project-name.png',
-    image: '',
-    imageAlt: '',
-    tags: ['React', 'CSS Grid'],
+    // This is the poster frame from the video itself; swap in your own still,
+    // artwork, or a shot from the edit whenever you like.
+    image: '/projects/fallen-music-video.jpg',
+    imageAlt: 'Title card reading FALLEN in large grey serif letters on a black background',
+    tags: [],
   },
-  {
-    title: 'Website or landing page',
-    status: 'Case study',
-    description:
-      'Use a card like this for a client site, a group project, or a page you designed and shipped.',
-    liveUrl: '',
-    sourceUrl: '',
-    image: '',
-    imageAlt: '',
-    tags: ['HTML', 'CSS', 'Responsive design'],
-  },
-  {
-    title: 'Design work',
-    status: 'Ongoing',
-    description:
-      'Cards also work for non-code work such as logos, brand kits, or animation experiments.',
-    liveUrl: '',
-    sourceUrl: '',
-    image: '',
-    imageAlt: '',
-    tags: ['Logo design', 'Figma', 'Animation'],
-  },
+  // {
+  //   title: 'Gradfolio',
+  //   status: 'Live',
+  //   description:
+  //     'This portfolio site: one scrollable React page with a dark, high-contrast theme, a sticky navigation bar, and a clearly marked section for every part of the story.',
+  //   // Paste your deployed address here when the site is online, e.g.
+  //   // liveUrl: 'https://your-portfolio.vercel.app',
+  //   liveUrl: '',
+  //   sourceUrl: 'https://github.com/Papisalt/my-react-app',
+  //   // Save a screenshot in public/projects/ then point to it here:
+  //   // image: '/projects/gradfolio.png',
+  //   image: '',
+  //   imageAlt: '',
+  //   highlights: [
+  //     'Built a single-page layout where the navigation scrolls to each section and highlights the one in view.',
+  //     'Added a skip link, shareable #section links, and fully labelled form fields.',
+  //   ],
+  //   tags: ['React', 'Vite', 'Bootstrap', 'React Router'],
+  // },
+  // {
+  //   title: 'Your next project',
+  //   status: 'In progress',
+  //   description:
+  //     'Describe the project in a sentence or two: what it does, who it is for, and what part you built.',
+  //   // liveUrl: 'https://project-name.netlify.app',
+  //   liveUrl: '',
+  //   // sourceUrl: 'https://github.com/Papisalt/project-name',
+  //   sourceUrl: '',
+  //   // image: '/projects/project-name.png',
+  //   image: '',
+  //   imageAlt: '',
+  //   tags: ['React', 'CSS Grid'],
+  // },
+  // {
+  //   title: 'Website or landing page',
+  //   status: 'Case study',
+  //   description:
+  //     'Use a card like this for a client site, a group project, or a page you designed and shipped.',
+  //   liveUrl: '',
+  //   sourceUrl: '',
+  //   image: '',
+  //   imageAlt: '',
+  //   tags: ['HTML', 'CSS', 'Responsive design'],
+  // },
 ]
 
 export const Projects = () => {
-  useDocumentTitle('Projects')
-
   return (
     <>
       <PageHeader
         eyebrow="Projects"
+        headingId="projects-heading"
         title="Selected projects"
         lead="A mix of shipped work and ongoing experiments. Each card notes the tools involved and where to look next."
       />
@@ -92,8 +116,7 @@ export const Projects = () => {
           Portfolio work
         </h2>
         <p className="section-intro">
-          These entries are starting points for your own case studies — swap in the projects you
-          want to show, along with screenshots and outcomes.
+          Open a live site, watch a walkthrough, or read the source — whichever is useful first.
         </p>
 
         <ul className="project-grid">
@@ -107,7 +130,13 @@ export const Projects = () => {
                   loading="lazy"
                   decoding="async"
                 />
-              ) : null}
+              ) : (
+                <ThumbPlaceholder
+                  className="project-shot"
+                  label={project.status}
+                  title={project.title}
+                />
+              )}
 
               <div className="project-head">
                 <h3>{project.title}</h3>
@@ -127,14 +156,18 @@ export const Projects = () => {
                 </>
               ) : null}
 
-              <h4 className="project-subtitle">Built with</h4>
-              <ul className="tag-list">
-                {project.tags.map((tag) => (
-                  <li className="tag" key={tag}>
-                    {tag}
-                  </li>
-                ))}
-              </ul>
+              {project.tags?.length ? (
+                <>
+                  <h4 className="project-subtitle">Built with</h4>
+                  <ul className="tag-list">
+                    {project.tags.map((tag) => (
+                      <li className="tag" key={tag}>
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : null}
 
               <div className="project-actions">
                 {project.liveUrl ? (
@@ -147,6 +180,21 @@ export const Projects = () => {
                     Visit {project.title}
                     {' '}
                     <span className="visually-hidden">website (opens in a new tab)</span>
+                  </a>
+                ) : null}
+
+                {project.videoUrl ? (
+                  <a
+                    className="btn btn-outline-light btn-sm"
+                    href={project.videoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {project.videoLabel || 'Watch the demo'}
+                    {' '}
+                    <span className="visually-hidden">
+                      for {project.title} on YouTube (opens in a new tab)
+                    </span>
                   </a>
                 ) : null}
 
@@ -165,10 +213,10 @@ export const Projects = () => {
                   </a>
                 ) : null}
 
-                {project.liveUrl || project.sourceUrl ? null : (
-                  <NavLink className="btn btn-outline-light btn-sm" to="/contact">
+                {project.liveUrl || project.videoUrl || project.sourceUrl ? null : (
+                  <a className="btn btn-outline-light btn-sm" href="#contact">
                     Ask about {project.title}
-                  </NavLink>
+                  </a>
                 )}
               </div>
             </li>
@@ -185,12 +233,12 @@ export const Projects = () => {
           would change next time.
         </p>
         <div className="cta-row">
-          <NavLink className="btn btn-primary btn-lg" to="/contact">
+          <a className="btn btn-primary btn-lg" href="#contact">
             Request a walkthrough
-          </NavLink>
-          <NavLink className="btn btn-outline-light btn-lg" to="/about">
+          </a>
+          <a className="btn btn-outline-light btn-lg" href="#about">
             More about me
-          </NavLink>
+          </a>
         </div>
       </section>
     </>

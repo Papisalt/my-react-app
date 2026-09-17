@@ -16,6 +16,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Keeps the sticky header from covering the section an in-page link jumps to. */
+  scroll-padding-top: 5.5rem;
 }
 
 body {

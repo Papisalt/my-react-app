@@ -1,5 +1,3 @@
-import { NavLink } from 'react-router-dom'
-
 export const SiteFooter = () => {
   const year = new Date().getFullYear()
 
@@ -13,16 +11,22 @@ export const SiteFooter = () => {
         <nav aria-label="Footer">
           <ul className="site-footer-links">
             <li>
-              <NavLink to="/skills">Skills</NavLink>
+              <a href="#home">Back to top</a>
             </li>
             <li>
-              <NavLink to="/projects">Projects</NavLink>
+              <a href="#skills">Skills</a>
             </li>
             <li>
-              <NavLink to="/about">About</NavLink>
+              <a href="#projects">Projects</a>
             </li>
             <li>
-              <NavLink to="/contact">Contact</NavLink>
+              <a href="#designs">Designs</a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
             </li>
             <li>
               <a href="https://github.com/Papisalt" target="_blank" rel="noreferrer">

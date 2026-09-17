@@ -18,7 +18,7 @@
   margin-bottom: 1.75rem;
 }
 
-.page-header h1 {
+.page-header h2 {
   font-size: clamp(2.2rem, 4vw, 3.4rem);
   line-height: 1.1;
   color: #f8fafc;
@@ -267,6 +267,106 @@
   position: absolute;
   top: 0.45rem;
   width: 0.6rem;
+}
+
+/* Designs */
+
+.design-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.design-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 1.15rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+}
+
+/* Square frame so logos and other artwork line up, whatever their shape. */
+.design-thumb {
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  background: rgba(2, 6, 23, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  text-decoration: none;
+  width: 100%;
+}
+
+.design-thumb img {
+  height: 100%;
+  object-fit: contain;
+  padding: 0.9rem;
+  width: 100%;
+}
+
+/* Cover shown on a card that does not have an image yet. */
+
+.thumb-placeholder {
+  align-items: center;
+  background:
+    radial-gradient(circle at 80% 15%, rgba(34, 211, 238, 0.32), transparent 55%),
+    linear-gradient(135deg, rgba(124, 58, 237, 0.5), rgba(15, 23, 42, 0.92));
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  justify-content: center;
+  overflow: hidden;
+  padding: 1rem;
+  text-align: center;
+}
+
+.thumb-placeholder-title {
+  color: #f8fafc;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.thumb-placeholder-label {
+  color: #ddd6fe;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.design-body {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.design-category {
+  color: #a5b4fc;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.design-body h3 {
+  color: #f8fafc;
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.design-note {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  margin: 0;
 }
 
 /* About */

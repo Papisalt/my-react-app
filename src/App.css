@@ -219,7 +219,33 @@ textarea:focus-visible,
   outline-offset: 3px;
 }
 
-/* Focus is moved here programmatically after each navigation. */
+/* The skip link and the in-page navigation both move focus into <main>. */
 #main-content:focus {
   outline: none;
+}
+
+/* ---------------------------------------------------------------
+   One-page layout
+   --------------------------------------------------------------- */
+
+.page-section + .page-section {
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+}
+
+/* Shows which section of the page the visitor is currently reading. */
+.custom-navbar .navbar-nav .nav-link.active {
+  position: relative;
+}
+
+.custom-navbar .navbar-nav .nav-link.active::after {
+  background: linear-gradient(135deg, #8b5cf6, #38bdf8);
+  border-radius: 999px;
+  bottom: 0;
+  content: '';
+  height: 2px;
+  left: 0.5rem;
+  position: absolute;
+  right: 0.5rem;
 }

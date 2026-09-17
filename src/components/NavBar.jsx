@@ -1,14 +1,11 @@
 import { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { siteSections } from '../data/siteSections.js'
+import logo from '/jev-logo.png'
 
-const navItems = [
-  { label: 'Home', to: '/', end: true },
-  { label: 'Skills', to: '/skills' },
-  { label: 'Projects', to: '/projects' },
-  { label: 'About', to: '/about' },
-]
+// Contact gets its own button at the end of the list, so leave it out here.
+const navLinks = siteSections.filter((section) => section.id !== 'contact')
 
-export const NavBar = () => {
+export const NavBar = ({ activeSectionId }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
@@ -32,12 +29,17 @@ export const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg custom-navbar" aria-label="Main">
       <div className="container">
-        <NavLink className="navbar-brand brand-mark" to="/" onClick={closeMenu}>
-          <span className="brand-badge" aria-hidden="true">
+        <a className="navbar-brand brand-mark" href="#home" onClick={closeMenu}>
+          {/* <span className="brand-badge" aria-hidden="true">
             Jv
-          </span>
+          </span> */}
+          <img
+            src={logo}
+            alt="Uncle Johns logo"
+            className="brand-badge"
+          />
           Uncle Johns
-        </NavLink>
+        </a>
 
         <button
           className="navbar-toggler"
@@ -55,22 +57,26 @@ export const NavBar = () => {
           id="primary-navigation"
         >
           <ul className="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-            {navItems.map((item) => (
-              <li className="nav-item" key={item.to}>
-                <NavLink
-                  className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-                  end={item.end}
-                  onClick={closeMenu}
-                  to={item.to}
-                >
-                  {item.label}
-                </NavLink>
-              </li>
-            ))}
+            {navLinks.map((section) => {
+              const isActive = section.id === activeSectionId
+
+              return (
+                <li className="nav-item" key={section.id}>
+                  <a
+                    aria-current={isActive ? 'true' : undefined}
+                    className={isActive ? 'nav-link active' : 'nav-link'}
+                    href={`#${section.id}`}
+                    onClick={closeMenu}
+                  >
+                    {section.label}
+                  </a>
+                </li>
+              )
+            })}
             <li className="nav-item ms-lg-3">
-              <NavLink className="btn btn-primary btn-sm" onClick={closeMenu} to="/contact">
+              <a className="btn btn-primary btn-sm" href="#contact" onClick={closeMenu}>
                 Contact Me
-              </NavLink>
+              </a>
             </li>
           </ul>
         </div>

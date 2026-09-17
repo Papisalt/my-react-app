@@ -1,6 +1,3 @@
-import { NavLink } from 'react-router-dom'
-import { useDocumentTitle } from '../hooks/useDocumentTitle.js'
-
 const profileImage = '/IMG_6285.jpeg'
 
 const services = [
@@ -21,37 +18,40 @@ const services = [
 
 const exploreLinks = [
   {
-    to: '/skills',
+    href: '#skills',
     title: 'Skills',
     description: 'The languages, frameworks, and design tools I reach for every day.',
   },
   {
-    to: '/projects',
+    href: '#projects',
     title: 'Projects',
     description: 'Selected work, from portfolio sites to interface experiments.',
   },
   {
-    to: '/about',
+    href: '#designs',
+    title: 'Designs',
+    description: 'Logos, brand marks, and other visual work I have put together.',
+  },
+  {
+    href: '#about',
     title: 'About',
     description: 'How I got into development, plus the way I like to work.',
   },
   {
-    to: '/contact',
+    href: '#contact',
     title: 'Contact',
     description: 'Tell me about your project and I will reply as soon as I can.',
   },
 ]
 
 export const Home = () => {
-  useDocumentTitle('Home')
-
   return (
     <>
-      <section className="hero-panel" aria-labelledby="home-title">
+      <section className="hero-panel" aria-labelledby="home-heading">
         <div className="hero-layout">
           <div className="hero-copy">
-            <span className="eyebrow">Welcome I am</span>
-            <h1 id="home-title">John Errol Valdez.</h1>
+            <span className="eyebrow">Hello I am</span>
+            <h1 id="home-heading">John Errol Valdez.</h1>
             <p>
               Aspiring Full-Stack Developer, Web Designer, UI/UX Designer, Logo and Animation
               Designer.
@@ -93,11 +93,11 @@ export const Home = () => {
 
         <ul className="info-grid">
           {exploreLinks.map((link) => (
-            <li className="info-card" key={link.to}>
+            <li className="info-card" key={link.href}>
               <h3>
-                <NavLink className="card-link" to={link.to}>
+                <a className="card-link" href={link.href}>
                   {link.title}
-                </NavLink>
+                </a>
               </h3>
               <p>{link.description}</p>
             </li>
