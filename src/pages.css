@@ -233,6 +233,27 @@
   padding-top: 1.5rem;
 }
 
+.rotating-role {
+  display: inline-block;
+  min-width: 13ch;
+  font-size: 1.5rem;
+  animation: role-change 0.45s ease both;
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+@keyframes role-change {
+  from {
+    opacity: 0;
+    transform: translateY(0.35rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Screenshot added through the `image` field in the project list. */
 .project-shot {
   aspect-ratio: 16 / 10;
@@ -288,13 +309,25 @@
   display: flex;
   flex-direction: column;
   padding: 1.25rem;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.design-card:hover {
+  border-color: rgba(125, 211, 252, 0.35);
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.3);
+  transform: translateY(-0.25rem);
+}
+
+.design-card-featured {
+  background: linear-gradient(145deg, rgba(30, 41, 88, 0.9), rgba(15, 23, 42, 0.82));
+  border-color: rgba(125, 211, 252, 0.35);
 }
 
 /* Square frame so logos and other artwork line up, whatever their shape. */
 .design-thumb {
   align-items: center;
   aspect-ratio: 1 / 1;
-  background: rgba(2, 6, 23, 0.55);
+  background: #252a2b;
   border: 1px solid rgba(148, 163, 184, 0.16);
   border-radius: 1rem;
   display: flex;
@@ -305,10 +338,16 @@
 }
 
 .design-thumb img {
-  height: 100%;
+  height: auto;
   object-fit: contain;
-  padding: 0.9rem;
+  padding: 1.25rem;
+  transition: transform 0.35s ease;
   width: 100%;
+}
+
+.design-thumb:hover img,
+.design-thumb:focus-visible img {
+  transform: scale(1.04);
 }
 
 /* Cover shown on a card that does not have an image yet. */
@@ -655,5 +694,9 @@
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .rotating-role {
+    min-width: 0;
   }
 }

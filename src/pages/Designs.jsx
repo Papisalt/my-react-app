@@ -29,32 +29,13 @@ const logos = [
     tags: ['Logo design', 'Typography'],
   },
   {
-    title: 'Client logo',
+    title: 'Startup Project Ubra',
     category: 'Logo mark',
     description:
-      'Replace this card with a client mark: say who it was for and what the shape is meant to suggest.',
-    // image: '/designs/client-logo.png',
-    image: '',
-    imageAlt: '',
-    tags: ['Logo design', 'Figma'],
-  },
-  {
-    title: 'Wordmark',
-    category: 'Wordmark',
-    description:
-      'Use a card like this for a name set in type, plus the weights and spacing you settled on.',
-    image: '',
-    imageAlt: '',
-    tags: ['Typography', 'Brand'],
-  },
-  {
-    title: 'Brand kit',
-    category: 'Brand kit',
-    description:
-      'A page from a brand sheet: logo variations, colour swatches, and the type scale in one view.',
-    image: '',
-    imageAlt: '',
-    tags: ['Brand kit', 'Colour'],
+      'A logo for a startup project called Ubra, designed to access or view works aligned with your profession or desired career.',
+    image: '/projects/Ubra_logo.png',
+    imageAlt: 'Logo for the startup project Ubra.',
+    tags: ['Logo design', 'Canva', 'Typography'],
   },
 ]
 
@@ -65,47 +46,13 @@ const logos = [
 //  for example 'UI concept', 'Poster', 'Social kit', or 'Motion'.
 // =============================================================================
 const designs = [
-  {
-    title: 'Interface concept',
-    category: 'UI concept',
-    description:
-      'A screen or flow you designed in Figma: describe the problem it solves and the layout you chose.',
-    image: '',
-    imageAlt: '',
-    tags: ['UI/UX design', 'Figma'],
-  },
-  {
-    title: 'Poster or layout',
-    category: 'Print layout',
-    description:
-      'Posters, banners, or page layouts. Note the format and the size you designed for.',
-    image: '',
-    imageAlt: '',
-    tags: ['Layout', 'Typography'],
-  },
-  {
-    title: 'Social media kit',
-    category: 'Social kit',
-    description:
-      'A set of matching graphics for a page or campaign, with the sizes and the template you built.',
-    image: '',
-    imageAlt: '',
-    tags: ['Figma', 'Brand'],
-  },
-  {
-    title: 'Animation loop',
-    category: 'Motion',
-    description:
-      'A short animation or micro-interaction. Say how long it runs and what it is meant to emphasise.',
-    image: '',
-    imageAlt: '',
-    tags: ['Animation', 'Motion design'],
-  },
 ]
 
 const DesignCard = ({ item }) => {
   return (
-    <li className="design-card">
+    <li
+      className={item.title === 'Startup Project Ubra' ? 'design-card design-card-featured' : 'design-card'}
+    >
       {item.image ? (
         <a className="design-thumb" href={item.image} target="_blank" rel="noreferrer">
           <img
@@ -156,47 +103,30 @@ export const Designs = () => {
         eyebrow="Designs"
         headingId="designs-heading"
         title="Logos and design work"
-        lead="Marks, layouts, and motion pieces I have made alongside the code. Any card with an image opens the full-size file in a new tab."
+        lead="Logos, layouts, and motion work."
       />
 
       <section className="section-block" aria-labelledby="designs-logos-title">
         <h2 className="section-title" id="designs-logos-title">
           Logos and brand marks
         </h2>
-        <p className="section-intro">
-          Marks and wordmarks, with a short note on the thinking behind each shape.
-        </p>
-
         <DesignGrid items={logos} />
       </section>
 
       <section className="section-block" aria-labelledby="designs-gallery-title">
         <h2 className="section-title" id="designs-gallery-title">
-          Other design work
+          More design work coming soon
         </h2>
-        <p className="section-intro">
-          Interface concepts, print layouts, and animation experiments.
-        </p>
-
         <DesignGrid items={designs} />
       </section>
 
       <section className="section-block" aria-labelledby="designs-cta-title">
         <h2 className="section-title" id="designs-cta-title">
-          Need a logo or a design refresh?
+          Need design work?
         </h2>
-        <p className="section-intro">
-          I can put together a mark, a small brand kit, or a set of layouts that match your
-          project.
-        </p>
-        <div className="cta-row">
-          <a className="btn btn-primary btn-lg" href="#contact">
-            Ask about design work
-          </a>
-          <a className="btn btn-outline-light btn-lg" href="#projects">
-            See my projects
-          </a>
-        </div>
+        <a className="btn btn-primary btn-lg" href="#contact">
+          Ask about design work
+        </a>
       </section>
     </>
   )

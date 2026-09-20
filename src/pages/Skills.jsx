@@ -30,6 +30,7 @@ const skillGroups = [
     skills: [
       { name: 'Git and GitHub', note: 'Branching, pull requests, and readable history.' },
       { name: 'Vite and npm', note: 'Dev servers, production builds, dependencies.' },
+      { name: 'Django and Laravel', note: 'Full-stack Python and PHP frameworks for web application development.' },
       { name: 'Accessibility', note: 'Keyboard support, semantics, and contrast checking.' },
       { name: 'Debugging', note: 'DevTools, console, network, and layout debugging.' },
       { name: 'Troubleshooting', note: 'Identifying and resolving issues in code and systems.' },
@@ -50,17 +51,13 @@ export const Skills = () => {
         eyebrow="Skills"
         headingId="skills-heading"
         title="Skills and toolset"
-        lead="A snapshot of what I can build today, what I design with, and how I keep the work organised."
+        lead="Development, design, and workflow tools."
       />
 
       <section className="section-block" aria-labelledby="skills-groups-title">
         <h2 className="section-title" id="skills-groups-title">
           What I work with
         </h2>
-        <p className="section-intro">
-          Each group lists the tools I use most often, with a short note on how I apply them.
-        </p>
-
         <ul className="skill-grid">
           {skillGroups.map((group) => (
             <li className="skill-card" key={group.title}>
@@ -83,7 +80,6 @@ export const Skills = () => {
         <h2 className="section-title" id="skills-learning-title">
           Currently learning
         </h2>
-        <p className="section-intro">Skills I am actively practising so I can work full-stack.</p>
         <ul className="value-list">
           {learningNow.map((item) => (
             <li key={item}>{item}</li>
@@ -93,19 +89,11 @@ export const Skills = () => {
 
       <section className="section-block" aria-labelledby="skills-cta-title">
         <h2 className="section-title" id="skills-cta-title">
-          Need one of these skills on your team?
+          Let&apos;s work together
         </h2>
-        <p className="section-intro">
-          I am open to internships, freelance work, and collaborations on web projects.
-        </p>
-        <div className="cta-row">
-          <a className="btn btn-primary btn-lg" href="#contact">
-            Start a conversation
-          </a>
-          <a className="btn btn-outline-light btn-lg" href="#projects">
-            See my projects
-          </a>
-        </div>
+        <a className="btn btn-primary btn-lg" href="#contact">
+          Start a conversation
+        </a>
       </section>
     </>
   )

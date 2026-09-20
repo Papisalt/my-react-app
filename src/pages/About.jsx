@@ -42,13 +42,13 @@ export const About = () => {
       <PageHeader
         eyebrow="About"
         headingId="about-heading"
-        title="About John Errol Valdez"
-        lead="Designer turned developer, building interfaces that are simple to use and simple to maintain."
+        title="About me"
+        lead="Designer and developer focused on clear, useful interfaces."
       />
 
       <section className="section-block" aria-labelledby="about-story-title">
         <h2 className="section-title" id="about-story-title">
-          The short version
+          Profile
         </h2>
 
         <div className="about-grid">
@@ -82,8 +82,6 @@ export const About = () => {
         <h2 className="section-title" id="about-journey-title">
           Journey so far
         </h2>
-        <p className="section-intro">Four steps that shaped how I build today.</p>
-
         <ol className="timeline">
           {journey.map((milestone) => (
             <li className="timeline-item" key={milestone.year}>
@@ -97,9 +95,8 @@ export const About = () => {
 
       <section className="section-block" aria-labelledby="about-practices-title">
         <h2 className="section-title" id="about-practices-title">
-          How I like to work
+          Approach
         </h2>
-        <p className="section-intro">The habits I bring to a team or a client project.</p>
         <ul className="value-list">
           {practices.map((practice) => (
             <li key={practice}>{practice}</li>
@@ -109,19 +106,11 @@ export const About = () => {
 
       <section className="section-block" aria-labelledby="about-cta-title">
         <h2 className="section-title" id="about-cta-title">
-          Let&apos;s build something together
+          Get in touch
         </h2>
-        <p className="section-intro">
-          Tell me what you are working on and I will let you know how I can help.
-        </p>
-        <div className="cta-row">
-          <a className="btn btn-primary btn-lg" href="#contact">
-            Contact me
-          </a>
-          <a className="btn btn-outline-light btn-lg" href="#skills">
-            Review my skills
-          </a>
-        </div>
+        <a className="btn btn-primary btn-lg" href="#contact">
+          Contact me
+        </a>
       </section>
     </>
   )

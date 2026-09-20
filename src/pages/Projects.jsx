@@ -108,17 +108,13 @@ export const Projects = () => {
         eyebrow="Projects"
         headingId="projects-heading"
         title="Selected projects"
-        lead="A mix of shipped work and ongoing experiments. Each card notes the tools involved and where to look next."
+        lead="Selected development and creative work."
       />
 
       <section className="section-block" aria-labelledby="projects-list-title">
         <h2 className="section-title" id="projects-list-title">
           Portfolio work
         </h2>
-        <p className="section-intro">
-          Open a live site, watch a walkthrough, or read the source — whichever is useful first.
-        </p>
-
         <ul className="project-grid">
           {projects.map((project) => (
             <li className="project-card" key={project.title}>
@@ -226,20 +222,11 @@ export const Projects = () => {
 
       <section className="section-block" aria-labelledby="projects-next-title">
         <h2 className="section-title" id="projects-next-title">
-          Want the full walkthrough?
+          Discuss a project
         </h2>
-        <p className="section-intro">
-          I am happy to talk through the decisions behind any of these builds, including what I
-          would change next time.
-        </p>
-        <div className="cta-row">
-          <a className="btn btn-primary btn-lg" href="#contact">
-            Request a walkthrough
-          </a>
-          <a className="btn btn-outline-light btn-lg" href="#about">
-            More about me
-          </a>
-        </div>
+        <a className="btn btn-primary btn-lg" href="#contact">
+          Request a walkthrough
+        </a>
       </section>
     </>
   )

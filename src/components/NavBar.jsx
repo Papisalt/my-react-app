@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react'
 import { siteSections } from '../data/siteSections.js'
 import logo from '/jev-logo.png'
 
-// Contact gets its own button at the end of the list, so leave it out here.
-const navLinks = siteSections.filter((section) => section.id !== 'contact')
+const navLinks = siteSections
 
 export const NavBar = ({ activeSectionId }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -73,11 +72,6 @@ export const NavBar = ({ activeSectionId }) => {
                 </li>
               )
             })}
-            <li className="nav-item ms-lg-3">
-              <a className="btn btn-primary btn-sm" href="#contact" onClick={closeMenu}>
-                Contact Me
-              </a>
-            </li>
           </ul>
         </div>
       </div>

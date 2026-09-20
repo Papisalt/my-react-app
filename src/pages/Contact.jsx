@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { PageHeader } from '../components/PageHeader.jsx'
 
-// Replace this placeholder with your real address before publishing.
-const contactEmail = 'john.valdez@example.com'
+const contactEmail = 'itsmejevjev@gmail.com'
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const initialValues = {
@@ -105,19 +104,14 @@ export const Contact = () => {
       <PageHeader
         eyebrow="Contact"
         headingId="contact-heading"
-        title="Let us talk about your project"
-        lead="Send a message with the form below, or reach me directly through the details alongside it."
+        title="Contact"
+        lead="Have a project in mind? Send me a message."
       />
 
       <section className="section-block" aria-labelledby="contact-form-title">
         <h2 className="section-title" id="contact-form-title">
           Send a message
         </h2>
-        <p className="section-intro">
-          Fields marked with a star are required and checked in your browser before you submit, so
-          you can see exactly what still needs attention.
-        </p>
-
         <div className="contact-grid">
           <form className="contact-form" onSubmit={handleSubmit} noValidate>
             <div
@@ -306,13 +300,13 @@ export const Contact = () => {
 
             <p className="form-status" role="status">
               {status === 'success'
-                ? `Thanks ${submittedName || 'for reaching out'} - your message passed validation. This demo form does not send yet, so you can email ${contactEmail} directly as well.`
+                ? `Thanks ${submittedName || 'for reaching out'}. Please email ${contactEmail} directly to continue.`
                 : ''}
             </p>
           </form>
 
           <aside className="contact-details" aria-labelledby="contact-details-title">
-            <h3 id="contact-details-title">Other ways to reach me</h3>
+            <h3 id="contact-details-title">Direct contact</h3>
             <ul className="contact-list">
               <li>
                 <span className="contact-label">Email</span>
